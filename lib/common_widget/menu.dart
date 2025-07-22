@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 
 class Menu extends StatelessWidget {
   final Map obj;

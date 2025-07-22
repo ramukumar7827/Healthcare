@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:location/location.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/common_widget/menu.dart';
 import 'package:medicare/screen/home/patient_home_tab_screen.dart';
 import 'package:medicare/screen/my_appointmentScreen.dart';

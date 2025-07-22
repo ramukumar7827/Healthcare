@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/home/appointment_booking_screen.dart';
 
 class OnlyDoctorProfileScreen extends StatelessWidget {

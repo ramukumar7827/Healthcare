@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/login/login_screen.dart';
 
 class SelectCityScreen extends StatefulWidget {
@@ -65,8 +65,6 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
     setState(() {
       _isGettingLocation = false;
     });
-
-    // Navigate to the next screen after location is retrieved
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => LoginScreen()));
   }

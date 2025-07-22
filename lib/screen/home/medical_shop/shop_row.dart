@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 
 class ShopRow extends StatelessWidget {
   final Map obj;

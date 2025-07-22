@@ -1,14 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:medicare/common/color_extension.dart';
-import 'package:medicare/common_widget/user_image_picker.dart';
-import 'package:medicare/screen/home/patient_main_tab_screen.dart';
-import 'package:medicare/screen/login/login_screen.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/login/mobile_screen.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:medicare/service/profile_details.dart';
 import 'package:medicare/service/data_service.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -23,9 +16,6 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
- 
-
-  File? _selectedImage;
   DataService dataService = DataService();
   // final storage = FlutterSecureStorage();
   void _onSubmit() async {
@@ -73,6 +63,7 @@ class _SignupScreenState extends State<SignupScreen> {
               Image.asset(
                 "assets/img/color_logo.png",
                 width: context.width * 0.33,
+                color: TColor.primary,
               ),
               SizedBox(
                 height: context.width * 0.05,

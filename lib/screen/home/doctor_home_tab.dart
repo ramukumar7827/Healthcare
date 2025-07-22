@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:medicare/common/color_extension.dart';
-import 'package:medicare/service/data_service.dart';
+import 'package:medicare/common/color.dart';
 import 'package:intl/intl.dart';
 
 class DoctorHomeTab extends StatefulWidget {

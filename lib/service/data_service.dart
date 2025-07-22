@@ -32,6 +32,26 @@ class DataService {
       return null;
     }
   }
+  Future<dynamic> generateOrderId(String url, Map<String, dynamic> body) async {
+    try {
+      url = formatter(url);
+      var response = await http.post(
+        Uri.parse(url),
+        headers: {"Content-type": "application/json"},
+        body: json.encode(body),
+      );
+      if (response.statusCode == 200) {
+        return response.body;
+      } else {
+        log.e('Failed to load data: ${response.statusCode}');
+        return null;
+      }
+    } catch (e) {
+      log.e('Error:$e');
+      return null;
+    }
+  }
+
   
   Future<dynamic> loginUser(String url, Map<String, String> body) async {
     try {

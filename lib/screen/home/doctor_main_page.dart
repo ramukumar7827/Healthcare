@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/common_widget/menu.dart';
 import 'package:medicare/screen/home/doctor_home_tab.dart';
 // import 'package:medicare/screen/doctor/doctor_appointments_screen.dart';
@@ -141,16 +141,6 @@ class _DoctorMainTabScreenState extends State<DoctorMainTabScreen>
             ),
             SizedBox(
               height: 10,
-            ),
-            Menu(
-              obj: menuArr[0],
-              onPressed: () {
-                //   Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => PatientAppointmentsScreen(
-                //               patientUserName: userName)));
-              },
             ),
             SizedBox(
               height: 5,

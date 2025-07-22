@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/home/only_docter_profile_screen.dart';
 
 class DoctorCell extends StatefulWidget {

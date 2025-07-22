@@ -1,17 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:medicare/common/color_extension.dart';
-import 'package:medicare/common_widget/category_button.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/common_widget/section_row.dart';
-
-import 'package:medicare/screen/home/chat/chat_message_screen.dart';
-import 'package:medicare/screen/home/doctor_cell.dart';
+import 'package:medicare/screen/home/doctor_profile.dart';
 import 'package:medicare/screen/home/medical_shop/medical_shop_list_screen.dart';
 import 'package:medicare/screen/home/medical_shop/medical_shop_profile_screen.dart';
-import 'package:medicare/screen/home/only_docter_profile_screen.dart';
 import 'package:medicare/screen/home/shop_cell.dart';
-import 'package:http/http.dart' as http;
 import 'package:medicare/service/data_service.dart';
 
 class HomeTabScreen extends StatefulWidget {

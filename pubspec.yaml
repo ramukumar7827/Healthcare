@@ -47,6 +47,7 @@ dependencies:
   uuid: ^4.5.1
   location: ^8.0.0
   font_awesome_flutter: ^10.8.0
+  razorpay_flutter: ^1.4.0
  
 
 dev_dependencies:

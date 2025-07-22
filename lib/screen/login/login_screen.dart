@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/common/color_extension.dart';
-import 'package:medicare/screen/home/patient_main_tab_screen.dart';
-import 'package:medicare/screen/home/medical_shop/doctor_list.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/login/doctor_login_screen.dart';
 import 'package:medicare/screen/login/mobile_screen.dart';
-import 'package:medicare/screen/login/signup_screen.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -30,10 +26,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: context.width * 0.6,
                 decoration: BoxDecoration(
                   color: TColor.primary,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(context.width),
-                    bottomRight: Radius.circular(context.width),
-                  ),
                 ),
               ),
               Padding(

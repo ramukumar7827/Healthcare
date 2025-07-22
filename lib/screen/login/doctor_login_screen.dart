@@ -1,6 +1,6 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/home/doctor_main_page.dart';
 import 'package:medicare/screen/login/doctor_signup_screen.dart';
 import 'package:medicare/service/data_service.dart';
@@ -75,6 +75,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
               Image.asset(
                 "assets/img/color_logo.png",
                 width: context.width * 0.33,
+                color: TColor.primary,
               ),
               SizedBox(
                 height: context.width * 0.05,

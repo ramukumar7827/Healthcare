@@ -1,12 +1,11 @@
 import 'dart:convert';
-
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 import 'package:medicare/screen/home/patient_main_tab_screen.dart';
-import 'package:medicare/screen/home/make_payment_screen.dart';
 import 'package:medicare/service/data_service.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class AppointmentBookingScreen extends StatefulWidget {
   final doctorUserName;
@@ -23,46 +22,116 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
   final TextEditingController _messageController = TextEditingController();
   DateTime? selectDate;
   final storage = FlutterSecureStorage();
+  var _razorpay = Razorpay();
   void _onSubmit() async {
-    print("Submit button pressed");
-    final _patientUserName = await storage.read(key: 'userName');
+  print("Submit button pressed");
+  final patientUserName = await storage.read(key: 'userName');
+  print("Username from storage: $patientUserName");
+  print(selectDate);
+  if (_formKey.currentState!.validate() && selectDate != null) {
+    Map<String, dynamic> orderBody = {
+      "amount": 500,
+    };
 
-    print("Username from storage: $_patientUserName");
-    print(selectDate);
-    if (_formKey.currentState!.validate() && selectDate != null) {
-      Map<String, String> data = {
-        "patientUserName": "ramu",
-        "doctorUserName": widget.doctorUserName,
-        "date": selectDate!.toIso8601String(), // Removed space before key
-        "reason": _reasonController.text,
-        "message": _messageController.text, // Removed space before key
-        "patientContactNumber": "7827733004"
-      };
-      print('//////////////////////');
-      var response =
-          await DataService().bookAppointment('/bookAppointment', data);
-      if (response != null) {
-        Map<String, dynamic> jsonResponse = await json.decode(response);
-        if (jsonResponse['success'] == false) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(jsonResponse['error'])));
-        } else if (jsonResponse['success'] == true) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => MainTabScreen()),
-          );
+    var responseFromServer = await DataService().generateOrderId('/generateOrderId', orderBody);
+    if (responseFromServer != null) {
+      Map<String, dynamic> jsonResponse = await json.decode(responseFromServer);
+      if (jsonResponse['success'] == true) {
+        String orderId = jsonResponse['orderId'];
+
+        Map<String, String> data = {
+          "patientUserName": patientUserName.toString(),
+          "doctorUserName": widget.doctorUserName,
+          "date": selectDate!.toIso8601String(),
+          "reason": _reasonController.text,
+          "message": _messageController.text,
+          "patientContactNumber": "7827733004"
+        };
+
+        var options = {
+          'key': 'rzp_test_UtF2C3eSj6GxNe',
+          'amount': 500,
+          'name': patientUserName.toString(),
+          'currency': 'INR',
+          'order_id': orderId,
+          'description': 'Appointment Booking',
+          'prefill': {'contact': '7827733004', 'email': 'test@example.com'},
+        };
+
+        try {
+          _razorpay.open(options);
+        } catch (e) {
+          print(e);
         }
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Booking failed, please try again.')),
+          SnackBar(content: Text(jsonResponse['error'])),
         );
       }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to generate order ID')),
+      );}
+}
+}
+
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) async {
+    Map<String, String> data = {
+      "patientUserName": "ramu",
+      "doctorUserName": widget.doctorUserName,
+      "date": selectDate!.toIso8601String(),
+      "reason": _reasonController.text,
+      "message": _messageController.text,
+      "patientContactNumber": "7827733004",
+      "paymentId": response.paymentId!,
+    };
+
+    var responseFromServer =
+        await DataService().bookAppointment('/bookAppointment', data);
+    if (responseFromServer != null) {
+      Map<String, dynamic> jsonResponse = await json.decode(responseFromServer);
+      if (jsonResponse['success'] == false) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(jsonResponse['error'])));
+      } else if (jsonResponse['success'] == true) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => MainTabScreen()),
+        );
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Booking failed, please try again.')),
+      );
     }
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Payment failed: ${response.message}')),
+    );
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+          content: Text('External wallet selected: ${response.walletName}')),
+    );
+  }
+
+  @override
+  void initState() {
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+    super.initState();
   }
 
   @override
   void dispose() {
     _reasonController.dispose();
     _messageController.dispose();
+    _razorpay.clear();
     super.dispose();
   }
 
@@ -240,7 +309,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                     ),
                   ),
                   Text(
-                    "50\$",
+                    "500Rs",
                     style: TextStyle(
                       color: TColor.primary,
                       fontSize: 14,

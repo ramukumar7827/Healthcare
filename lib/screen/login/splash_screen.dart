@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:medicare/common/color_extension.dart';
+import 'package:medicare/common/color.dart';
 
 import 'package:medicare/service/select_city_screen.dart';
 
@@ -16,9 +15,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
    
     super.initState();
-
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-
     load();
   }
 
@@ -44,6 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           "assets/img/splash_logo.png",
           width: context.width * 0.35,
           fit: BoxFit.contain,
+          color: TColor.primary,
         ),
       ),
     );
