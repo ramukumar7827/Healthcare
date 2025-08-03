@@ -35,7 +35,7 @@ class OnlyDoctorProfileScreen extends StatelessWidget {
                   Text(
                     doctorDetails["fullName"],
                     style: TextStyle(
-                      color: TColor.black,
+                      color: Colors.black,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
@@ -100,7 +100,7 @@ class OnlyDoctorProfileScreen extends StatelessWidget {
               title: const Text("Timings"),
               subtitle: Text(
                 doctorDetails["timings"],
-                style: TextStyle(color: TColor.unselect, fontSize: 12),
+                style: TextStyle(color:Colors.black,fontSize: 12),
               ),
             ),
             const Divider(color: Colors.black26),
@@ -109,7 +109,7 @@ class OnlyDoctorProfileScreen extends StatelessWidget {
               title: const Text("Address"),
               subtitle: Text(
                 doctorDetails["address"],
-                style: TextStyle(color: TColor.unselect, fontSize: 12),
+                style: TextStyle(color: Colors.black, fontSize: 12),
               ),
             ),
             const Divider(color: Colors.black26),
@@ -127,7 +127,7 @@ class OnlyDoctorProfileScreen extends StatelessWidget {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                    color: TColor.green,
+                    color: Colors.green,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(Icons.phone, color: Colors.white, size: 15),

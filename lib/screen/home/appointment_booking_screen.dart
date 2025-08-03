@@ -49,7 +49,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
         };
 
         var options = {
-          'key': 'rzp_test_UtF2C3eSj6GxNe',
+          'key': '',
           'amount': 500,
           'name': patientUserName.toString(),
           'currency': 'INR',
@@ -170,7 +170,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
               Text(
                 "Date",
                 style: TextStyle(
-                  color: TColor.black,
+                  color: Colors.black,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -235,7 +235,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
               Text(
                 "Reason For Visit",
                 style: TextStyle(
-                  color: TColor.black,
+                  color: Colors.black,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -268,7 +268,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
               Text(
                 "Message",
                 style: TextStyle(
-                  color: TColor.black,
+                  color: Colors.black,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -303,7 +303,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                   Text(
                     "Fees - ",
                     style: TextStyle(
-                      color: TColor.black,
+                      color: Colors.black,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),

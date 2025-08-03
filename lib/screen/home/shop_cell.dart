@@ -36,7 +36,7 @@ class ShopCell extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: 2,
               style: TextStyle(
-                color: TColor.black,
+                color: Colors.black,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),

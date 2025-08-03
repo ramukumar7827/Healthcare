@@ -33,7 +33,7 @@ class ShopRow extends StatelessWidget {
               Text(
                 "Rathod Medical Shop",
                 style: TextStyle(
-                  color: TColor.black,
+                  color:Colors.black,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -89,7 +89,7 @@ class ShopRow extends StatelessWidget {
             onTap: () {},
             child: Icon(
               Icons.more_vert,
-              color: TColor.black,
+              color: Colors.black,
               size: 40,
             ),
           )

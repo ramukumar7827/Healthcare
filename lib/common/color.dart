@@ -10,14 +10,6 @@ class TColor {
   static Color get primaryTextW => const Color(0xffFFFFFF);
   static Color get secondaryText => const Color(0xff7C7C7C);
   static Color get placeholder => const Color(0xffA3A3A3);
-  static Color get titleText => const Color(0xff656565);
-  static Color get black => const Color(0xff000000);
-
-  static Color get rate => const Color(0xffDE6732);
-  static Color get rateInActive => const Color(0xff7B7B7B);
-  static Color get unselect => const Color(0xff969696);
-  static Color get red => const Color(0xffEB1C4F);
-  static Color get green => const Color(0xff15977C);
 
   static Color get bg => const Color(0xffF5F5F5);
 

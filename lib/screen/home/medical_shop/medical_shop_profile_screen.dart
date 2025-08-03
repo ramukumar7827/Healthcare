@@ -61,7 +61,7 @@ class _MedicalShopProfileScreenState extends State<MedicalShopProfileScreen> {
                           style: TextStyle(fontWeight: FontWeight.w600)),
                       Text("Mon-Fri (11:00 AM - 05:00 PM)",
                           style:
-                              TextStyle(color: TColor.unselect, fontSize: 12)),
+                              TextStyle(color: Colors.grey, fontSize: 12)),
                     ],
                   ),
                   const Divider(color: Colors.black26),
@@ -76,7 +76,7 @@ class _MedicalShopProfileScreenState extends State<MedicalShopProfileScreen> {
                               fontSize: 14, fontWeight: FontWeight.w600)),
                       const Spacer(),
                       IconButton(
-                        icon: Icon(Icons.phone, size: 18, color: TColor.green),
+                        icon: Icon(Icons.phone, size: 18, color: Colors.green),
                         onPressed: () {},
                       ),
                       
