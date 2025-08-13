@@ -4,22 +4,18 @@
 
 [![Medicare Demo](https://img.shields.io/badge/Demo-Vimeo-blue)](https://vimeo.com/1103574547?share=copy)
 
-## ✨ Key Features
+##  Key Features
 
 ### For Patients
-- 🔍 Search and book appointments with nearby doctors
-- 📍 Location-based doctor discovery using Google Maps API
-- 👨‍⚕️ View detailed doctor profiles (specialization, experience, ratings)
-- 🗓️ Real-time availability checking
-- 💳 Secure payments via Razorpay (UPI, cards, net banking)
-- 📱 Intuitive appointment management
+- Book appointments with nearby doctors
+- Location-based doctor discovery using Google Maps API
+- View detailed doctor profiles (specialization, experience)
+- Secure payments via Razorpay (UPI, cards, net banking)
 
 ### For Doctors
-- 🏥 Professional profile management
-- 📅 Appointment scheduling system
-- 📊 Patient history tracking
-- 💬 Secure messaging with patients
-## 🛠️ Tech Stack
+- Professional profile management
+- Patient booking status.
+## Tech Stack
 
 | Component       | Technology Used                  |
 |-----------------|----------------------------------|
@@ -32,6 +28,15 @@
 | Authentication  | Firebase Auth                    |
 | UI Components   | Flutter Material Design          |
 
+## 📱 Screenshots
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/05f9ca9e-0db0-4188-b8f4-80299808cb9c" width="30%" alt="Home Screen">
+  <img src="https://github.com/user-attachments/assets/5b7272e7-a4c6-481c-a1ba-66b7dc035c3a" width="30%" alt="Doctor Profile">
+  <img src="https://github.com/user-attachments/assets/fc14ad07-15fd-4cac-a20a-54a592ffd833" width="30%" alt="Appointment Booking">
+  <img src="https://github.com/user-attachments/assets/doctor-dashboard" width="30%" alt="Doctor Dashboard">
+  <img src="https://github.com/user-attachments/assets/payment-screen" width="30%" alt="Payment Screen">
+</div>
 
 
 
