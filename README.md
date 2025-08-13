@@ -26,7 +26,6 @@
 | Maps Integration| Google Maps API                  |
 | State Management| Provider                         |
 | Authentication  | Firebase Auth                    |
-| UI Components   | Flutter Material Design          |
 
 ##  Screenshots
 
@@ -44,6 +43,7 @@
 - Razorpay developer account
 - Google Cloud Platform account for Maps API
 - Firebase project for authentication
+
 
 
 
