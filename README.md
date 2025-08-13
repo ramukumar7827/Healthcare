@@ -37,12 +37,13 @@
 
 ## Prerequisites
 
-- Flutter SDK (>= 3.0.0)
-- Node.js (>= 16.x)
+- Flutter SDK
+- Node.js
 - MongoDB Atlas account or local MongoDB
 - Razorpay developer account
 - Google Cloud Platform account for Maps API
 - Firebase project for authentication
+
 
 
 
