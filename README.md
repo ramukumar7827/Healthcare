@@ -19,6 +19,20 @@
 - 📅 Appointment scheduling system
 - 📊 Patient history tracking
 - 💬 Secure messaging with patients
+## 🛠️ Tech Stack
+
+| Component       | Technology Used                  |
+|-----------------|----------------------------------|
+| Frontend        | Flutter (Dart)                   |
+| Backend         | Node.js with Express             |
+| Database        | MongoDB (NoSQL)                  |
+| Payment Gateway | Razorpay SDK                     |
+| Maps Integration| Google Maps API                  |
+| State Management| Provider                         |
+| Authentication  | Firebase Auth                    |
+| UI Components   | Flutter Material Design          |
+
+
 
 
 
