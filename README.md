@@ -2,7 +2,7 @@
 
 **Medicare** is a full-stack mobile healthcare application built using **Flutter**, **Node.js**, and **MongoDB**. The app provides a seamless healthcare experience by connecting patients with nearby doctors through an intuitive interface with secure payment integration.
 
-[![Medicare Demo](https://img.shields.io/badge/Demo-Vimeo-blue)](https://vimeo.com/1103574547?share=copy)
+[Demo Video](https://vimeo.com/1103574547?share=copy)
 
 ##  Key Features
 
@@ -43,6 +43,7 @@
 - Razorpay developer account
 - Google Cloud Platform account for Maps API
 - Firebase project for authentication
+
 
 
 
